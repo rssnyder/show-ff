@@ -2,16 +2,28 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
+
+import { FFContextProvider } from '@harnessio/ff-react-client-sdk'
+
+// not a secret
+const apiKey = "7cfe2f72-50ab-4ec6-9537-cbfae942063e"
+const target = {
+  identifier: 'reactApp0',
+  name: 'React App Zero',
+  attributes: {
+     email: 'demo@harness.io',
+     location: 'us-central'
+  }
+}
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+    <FFContextProvider
+      apiKey={apiKey}
+      target={target}
+    >
+      <React.StrictMode>
+        <App />
+      </React.StrictMode>
+    </FFContextProvider>
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();

@@ -8,11 +8,12 @@ import { FFContextProvider } from '@harnessio/ff-react-client-sdk'
 // not a secret
 const apiKey = "7cfe2f72-50ab-4ec6-9537-cbfae942063e"
 const target = {
-  identifier: 'reactApp0',
-  name: 'React App Zero',
+  identifier: 'reactApp',
+  name: 'React App',
   attributes: {
      email: 'demo@harness.io',
-     location: 'us-central'
+     location: 'us-central',
+     purpose: 'demo',
   }
 }
 
